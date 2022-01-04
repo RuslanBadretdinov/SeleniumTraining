@@ -1,0 +1,5 @@
+#FouldersIgnore
+.idea
+
+#FilesIgnore
+*.iml
