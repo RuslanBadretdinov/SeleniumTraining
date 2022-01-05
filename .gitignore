@@ -3,3 +3,4 @@
 
 #FilesIgnore
 *.iml
+src/test/resources/chromedriver.exe
