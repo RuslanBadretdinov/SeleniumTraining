@@ -24,7 +24,7 @@ public class SberBankDemo {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
 
-        //Явные и неявные оэидания:
+        //Явные и неявные ожидания:
         //Неявные - general, глобальные ожидания - задаются один раз
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS); // проверка на загрузку страницы в течении 10 секунд.
         driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS); // срабатывает при вызове асинхронного скрипта, ожидает,
@@ -101,6 +101,7 @@ public class SberBankDemo {
 
         //явное ожидание (более гибкая проверка)
         wait.until(/*лямбда выражения*/ExpectedConditions.attributeContains(parentBaseMenu, "class", "opened"));
+
         //строгая обычная проверка
         Assert.assertTrue("Клик на базовое меню не был совершён", parentBaseMenu.getAttribute("class").contains("opened"));
 
