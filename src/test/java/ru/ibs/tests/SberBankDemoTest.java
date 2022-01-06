@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class SberBankDemo {
+public class SberBankDemoTest {
     WebDriver driver;
     WebDriverWait wait;
 

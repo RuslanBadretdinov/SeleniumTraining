@@ -86,6 +86,7 @@
                     <!-- Включаются тесты -->
                     <includes>
                         <include>**/RobotProjectTest.java</include>
+                        <include>**/*Test.java</include>
                     </includes>
                     <!-- excludes - исключение из прогона -->
                     <argLine>

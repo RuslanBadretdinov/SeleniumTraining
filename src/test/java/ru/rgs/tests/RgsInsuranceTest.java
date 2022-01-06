@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class RgsInsurance {
+public class RgsInsuranceTest {
     WebDriver driver;
     WebDriverWait wait;
     Actions actions;
