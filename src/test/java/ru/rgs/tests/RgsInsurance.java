@@ -49,13 +49,14 @@ public class RgsInsurance {
         buttonToCompanies.click();
 
         //к "Здоровью"
-        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).build().perform();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'col card')]//a[contains(@href, 'zdorove')]/..")));
-        WebElement buttonToHealth = driver.findElement(By.xpath("//div[contains(@class, 'col card')]//a[contains(@href, 'zdorove')]/.."));
+        //actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).build().perform();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[contains(text(), 'категории')]")));
+        WebElement buttonToHealth = driver.findElement(By.xpath("//a[@href = '/for-companies/zdorove']/.."));
         actions.moveToElement(buttonToHealth).click(buttonToHealth).build().perform();
         if (buttonToHealth.isDisplayed()) {
             actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).moveToElement(buttonToHealth).click(buttonToHealth).build().perform();
         }
+
 
         //к "Добровольному медицинскому страхованию"
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[ contains(@href, 'dobrovolnoe') and @class]/..")));

@@ -1,5 +1,6 @@
 #FouldersIgnore
 .idea
+/target/
 
 #FilesIgnore
 *.iml
