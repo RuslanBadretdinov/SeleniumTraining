@@ -96,7 +96,7 @@ public class RgsInsurance {
         wait.until(ExpectedConditions.elementToBeClickable(buttonForm));
         actions.moveToElement(buttonForm).click(buttonForm).build().perform();
 
-        //Проверка на введение неверной почти
+        //Проверка на введение неверной почты
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class and contains(text(),'корректный адрес электронной почты')]")));
 
         Assert.assertTrue("Отсутствует надпись о неправильном вводе email",
