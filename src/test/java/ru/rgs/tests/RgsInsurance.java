@@ -44,13 +44,14 @@ public class RgsInsurance {
     @Test
     public void test() {
         //к "Компаниям"
-        WebElement buttonToCompanies = driver.findElement(By.xpath("//a[text()='Компаниям' and contains(@href, 'for-companies')]/.."));
-        wait.until(ExpectedConditions.elementToBeClickable(buttonToCompanies));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@href, 'for-companies')]/..")));
+        WebElement buttonToCompanies = driver.findElement(By.xpath("//a[contains(@href, 'for-companies')]/.."));
         buttonToCompanies.click();
 
         //к "Здоровью"
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[contains(text(), 'категории')]")));
-        WebElement buttonToHealth = driver.findElement(By.xpath("//a[@href = '/for-companies/zdorove']/.."));
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).build().perform();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'col card')]//a[contains(@href, 'zdorove')]/..")));
+        WebElement buttonToHealth = driver.findElement(By.xpath("//div[contains(@class, 'col card')]//a[contains(@href, 'zdorove')]/.."));
         actions.moveToElement(buttonToHealth).click(buttonToHealth).build().perform();
         if (buttonToHealth.isDisplayed()) {
             actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).moveToElement(buttonToHealth).click(buttonToHealth).build().perform();
@@ -62,7 +63,7 @@ public class RgsInsurance {
         actions.moveToElement(buttonToInsurance).click(buttonToInsurance).build().perform();
 
         //Проверка заголовка "Добровольное медицинское страхование"
-        wait.until(ExpectedConditions.textToBe(By.xpath("//div[contains(@class,'text')]/h1[text()]"), "Добровольное медицинское страхование"));
+        wait.until(ExpectedConditions.textToBe(By.xpath("//h1[contains(text(), 'Добро')]"), "Добровольное медицинское страхование"));
 
         //Нажатие на "Отправить заявку"
         WebElement buttonToApply = driver.findElement(By.xpath("//div[@class='actions']/button[contains(@class, 'action-item')]"));
