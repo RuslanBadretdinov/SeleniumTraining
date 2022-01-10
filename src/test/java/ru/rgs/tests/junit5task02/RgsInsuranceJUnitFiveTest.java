@@ -1,6 +1,7 @@
 package ru.rgs.tests.junit5task02;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class RgsInsuranceJUnitFiveTest extends BaseTest {
 
+    @DisplayName("DisplayName RgsJUnit5")
     @ParameterizedTest(name = "RGS DMS Test = {0}")
     @CsvSource({
             "Иванов Иван Иванович, 9871234567, Стерлитамак, qwertyqwerty",
